@@ -5,4 +5,44 @@
 html, body, #root {
   height: 100%;
   margin: 0;
+  background-color: #FFF8F5;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #FAA994;
+  border-radius: 2px;
+}
+
+/* Decorative star used throughout */
+.star::before {
+  content: '✦';
+  color: #E8AF59;
+  margin-right: 6px;
+  font-size: 10px;
+}
+
+/* Card hover shimmer */
+.item-card {
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.item-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(232,175,89,0.08) 100%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.item-card:hover::after {
+  opacity: 1;
 }
